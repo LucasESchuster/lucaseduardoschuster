@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucaseduardoschuster.com/sitemap-index.xml
