@@ -204,6 +204,33 @@ const skills = [
       /* Scroll fade-in */
       .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+      /* Featured project */
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 24px rgba(59, 130, 246, 0.15), inset 0 0 12px rgba(59, 130, 246, 0.05), 0 0 0 1px rgba(99, 102, 241, 0.25); }
+        50% { box-shadow: 0 0 48px rgba(99, 102, 241, 0.3), inset 0 0 20px rgba(99, 102, 241, 0.08), 0 0 0 1px rgba(99, 102, 241, 0.55); }
+      }
+      .featured-terminal {
+        border-color: rgba(99, 102, 241, 0.35);
+        animation: pulse-glow 3s ease-in-out infinite;
+      }
+      .featured-badge {
+        background: linear-gradient(90deg, rgba(251,191,36,0.12), rgba(245,158,11,0.08));
+        border: 1px solid rgba(251,191,36,0.35);
+        color: #fbbf24;
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        border-radius: 3px;
+        letter-spacing: 0.08em;
+      }
+      .featured-live-cmd {
+        background: rgba(99, 102, 241, 0.06);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 4px;
+        padding: 10px 14px;
+        font-size: 0.75rem;
+        color: #a5b4fc;
+      }
     </style>
   </head>
   <body>
@@ -351,7 +378,49 @@ const skills = [
       <section id="projetos">
         <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;" class="fade-in">
           <p style="color: #1e3a5f; font-size: 0.8rem; margin-bottom: 4px;">// 03</p>
-          <h2 class="glow" style="font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: #60a5fa;">&gt; projetos --list</h2>
+          <h2 class="glow" style="font-size: 1.75rem; font-weight: 700; margin-bottom: 24px; color: #60a5fa;">&gt; projetos --list</h2>
+
+          <!-- cup-share-app — Projeto em destaque -->
+          <div class="terminal featured-terminal" style="display: flex; flex-direction: column; margin-bottom: 20px;">
+            <div class="terminal-header" style="justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="dot" style="background: #ff5f57;"></div>
+                <div class="dot" style="background: #febc2e;"></div>
+                <div class="dot" style="background: #28c840;"></div>
+                <span style="color: #818cf8; font-size: 0.7rem; margin-left: 8px;">~/projects/cup-share-app</span>
+              </div>
+              <span class="featured-badge">★ projeto em destaque</span>
+            </div>
+            <div style="padding: 24px; font-size: 0.8rem; line-height: 1.8; display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <p style="color: #c7d2fe; font-weight: 700; font-size: 1.05rem; margin-bottom: 8px;">cup-share-app</p>
+                <p style="color: #60a5fa; line-height: 1.7;">Plataforma completa para explorar e compartilhar receitas de café especial. Interface moderna com autenticação via magic link e experiência otimizada para baristas e entusiastas do café.</p>
+              </div>
+              <div class="featured-live-cmd">
+                <span style="color: #6366f1;">$</span> <span style="color: #a5b4fc;">open</span> <span style="color: #c7d2fe;">https://cup-share.lucaseduardoschuster.com</span>
+                <br/>
+                <span style="color: #4b5563;">&gt;</span> <span style="color: #60a5fa;">Conectando... </span><span class="cursor"></span>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                {['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'].map(tag => (
+                  <span style="border: 1px solid rgba(99,102,241,0.3); color: #a5b4fc; padding: 2px 8px; font-size: 0.7rem;">{tag}</span>
+                ))}
+              </div>
+              <div style="padding-top: 8px; border-top: 1px solid rgba(99,102,241,0.15); display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                <a href="https://cup-share.lucaseduardoschuster.com" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.8rem; padding: 8px 18px; display: inline-flex; align-items: center; gap: 6px;">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  ver ao vivo
+                </a>
+                <a href="https://github.com/LucasESchuster/cup-share-app" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="font-size: 0.8rem; padding: 8px 18px; display: inline-flex; align-items: center; gap: 6px;">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  ver código
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- outros projetos -->
+          <p style="color: #1e3a5f; font-size: 0.75rem; margin-bottom: 12px; letter-spacing: 0.05em;">// outros projetos</p>
           <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
 
             <!-- cup-share-api -->
@@ -374,33 +443,6 @@ const skills = [
                 </div>
                 <div style="margin-top: auto; padding-top: 8px; border-top: 1px solid #1e3a5f;">
                   <a href="https://github.com/LucasESchuster/cup-share-api" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="font-size: 0.75rem; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px;">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    ver repositório
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- cup-share-app -->
-            <div class="terminal" style="display: flex; flex-direction: column;">
-              <div class="terminal-header">
-                <div class="dot" style="background: #ff5f57;"></div>
-                <div class="dot" style="background: #febc2e;"></div>
-                <div class="dot" style="background: #28c840;"></div>
-                <span style="color: #3b82f6; font-size: 0.7rem; margin-left: 8px;">cup-share-app</span>
-              </div>
-              <div style="padding: 20px; font-size: 0.8rem; line-height: 1.8; flex: 1; display: flex; flex-direction: column; gap: 12px;">
-                <div>
-                  <p style="color: #93c5fd; font-weight: 700; font-size: 0.9rem; margin-bottom: 4px;">cup-share-app</p>
-                  <p style="color: #3b82f6; line-height: 1.6;">Front end do cup-share-api — interface para explorar e compartilhar receitas de café.</p>
-                </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                  {['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'].map(tag => (
-                    <span style="border: 1px solid #1e3a5f; color: #60a5fa; padding: 2px 8px; font-size: 0.7rem;">{tag}</span>
-                  ))}
-                </div>
-                <div style="margin-top: auto; padding-top: 8px; border-top: 1px solid #1e3a5f;">
-                  <a href="https://github.com/LucasESchuster/cup-share-app" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="font-size: 0.75rem; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px;">
                     <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                     ver repositório
                   </a>
