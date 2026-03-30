@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.lucaseduardoschuster.com" }],
+      "destination": "https://lucaseduardoschuster.com/$1",
+      "permanent": true
+    }
+  ]
+}

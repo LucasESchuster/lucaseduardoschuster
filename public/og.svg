@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#020818"/>
+
+  <!-- outer border -->
+  <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+
+  <!-- terminal header bar -->
+  <rect x="32" y="32" width="1136" height="48" fill="rgba(59,130,246,0.06)"/>
+  <line x1="32" y1="80" x2="1168" y2="80" stroke="#1e3a5f" stroke-width="1"/>
+
+  <!-- terminal dots -->
+  <circle cx="68"  cy="56" r="7" fill="#ff5f57"/>
+  <circle cx="92"  cy="56" r="7" fill="#febc2e"/>
+  <circle cx="116" cy="56" r="7" fill="#28c840"/>
+  <text x="140" y="61" font-family="'Courier New', monospace" font-size="13" fill="#3b82f6">bash — lucas@dev:~</text>
+
+  <!-- prompt line -->
+  <text x="72" y="160" font-family="'Courier New', monospace" font-size="16" fill="#3b82f6">lucas@dev:~$</text>
+  <text x="210" y="160" font-family="'Courier New', monospace" font-size="16" fill="#e2e8f0">whoami</text>
+
+  <!-- name -->
+  <text x="72" y="260" font-family="'Courier New', monospace" font-size="68" font-weight="700" fill="#60a5fa">Lucas Schuster</text>
+
+  <!-- role -->
+  <text x="72" y="318" font-family="'Courier New', monospace" font-size="22" fill="#3b82f6">&gt; Backend Developer // PHP &amp; Laravel Specialist</text>
+
+  <!-- divider -->
+  <line x1="72" y1="360" x2="480" y2="360" stroke="#1e3a5f" stroke-width="1"/>
+
+  <!-- stack tags -->
+  <rect x="72"  y="380" width="68"  height="28" fill="none" stroke="#1e3a5f" rx="2"/>
+  <text x="106" y="399" font-family="'Courier New', monospace" font-size="13" fill="#60a5fa" text-anchor="middle">PHP</text>
+
+  <rect x="152" y="380" width="90"  height="28" fill="none" stroke="#1e3a5f" rx="2"/>
+  <text x="197" y="399" font-family="'Courier New', monospace" font-size="13" fill="#60a5fa" text-anchor="middle">Laravel</text>
+
+  <rect x="254" y="380" width="92"  height="28" fill="none" stroke="#1e3a5f" rx="2"/>
+  <text x="300" y="399" font-family="'Courier New', monospace" font-size="13" fill="#60a5fa" text-anchor="middle">Node.js</text>
+
+  <rect x="358" y="380" width="120" height="28" fill="none" stroke="#1e3a5f" rx="2"/>
+  <text x="418" y="399" font-family="'Courier New', monospace" font-size="13" fill="#60a5fa" text-anchor="middle">PostgreSQL</text>
+
+  <rect x="490" y="380" width="84"  height="28" fill="none" stroke="#1e3a5f" rx="2"/>
+  <text x="532" y="399" font-family="'Courier New', monospace" font-size="13" fill="#60a5fa" text-anchor="middle">Docker</text>
+
+  <rect x="586" y="380" width="100" height="28" fill="none" stroke="#1e3a5f" rx="2"/>
+  <text x="636" y="399" font-family="'Courier New', monospace" font-size="13" fill="#60a5fa" text-anchor="middle">REST APIs</text>
+
+  <!-- domain watermark -->
+  <text x="72" y="560" font-family="'Courier New', monospace" font-size="15" fill="#1e3a5f">lucaseduardoschuster.com</text>
+</svg>
